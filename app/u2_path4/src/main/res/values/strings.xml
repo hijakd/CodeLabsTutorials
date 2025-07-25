@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ArtSpace</string>
+    <string name="img01_description">Close up photo of a ginger cat</string>
+    <string name="img02_description">photo of a leather drink holder</string>
+    <string name="img03_description">leather pedant</string>
+    <string name="img04_description">two decorative leather wrist cuffs</string>
+    <string name="img01_title">Close enough Felix?</string>
+    <string name="img02_title">The Heart Starter Molecule</string>
+    <string name="img04_title">Decoratively tooled leather cuffs</string>
+    <string name="img03_title">Leather Mjolnir pendant</string>
+    <string name="_2015">2015</string>
+    <string name="_2020">2020</string>
+    <string name="_2017">2017</string>
+</resources>

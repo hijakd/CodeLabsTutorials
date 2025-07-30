@@ -17,9 +17,6 @@
       <SelectionState runConfigName="app.u2_path3">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="TipUITests">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="app.u2_path4">
         <option name="selectionMode" value="DROPDOWN" />
         <DropdownSelection timestamp="2025-07-25T04:02:07.527786900Z">
@@ -32,6 +29,9 @@
         <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="app.u3_path1">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="app.u3_path2">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

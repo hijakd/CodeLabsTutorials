@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Birthday App</string>
+    <string name="happy_birthday">Happy Birthday</string>
+    <string name="emma">Emma</string>
+    <!--    <string name="from">from %1$s</string>-->
+    <string name="from">from</string>
+    <string name="android">Android</string>
+</resources>

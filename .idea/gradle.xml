@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/u1_path3" />
             <option value="$PROJECT_DIR$/app/u2_path1" />
             <option value="$PROJECT_DIR$/app/u2_path2" />
             <option value="$PROJECT_DIR$/app/u2_path2_practice" />
@@ -19,6 +20,8 @@
             <option value="$PROJECT_DIR$/app/u2_path4" />
             <option value="$PROJECT_DIR$/app/u3_path1" />
             <option value="$PROJECT_DIR$/app/u3_path1_practice" />
+            <option value="$PROJECT_DIR$/app/u3_path2" />
+            <option value="$PROJECT_DIR$/app/u3_path2_practice" />
           </set>
         </option>
       </GradleProjectSettings>

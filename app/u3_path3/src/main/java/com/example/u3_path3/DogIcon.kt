@@ -18,8 +18,11 @@ import com.example.u3_path3.ui.theme.Shapes
  * @param dogIcon is the resource ID for the image of the dog
  * @param modifier modifiers to set to this composable
  */
+
+
 @Composable
 fun DogIcon(@DrawableRes dogIcon: Int, modifier: Modifier = Modifier) {
+
     Image(
         painter = painterResource(dogIcon),
         contentDescription = null,

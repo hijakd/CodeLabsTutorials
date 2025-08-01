@@ -6,12 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.u3_path3_practice1.ui.theme.CodeLabsTutorialsTheme
 import com.example.u3_path3_practice1.ui.theme.SuperheroesTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,11 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SuperheroesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Surface() {
+                    HeroesApp()
                 }
             }
         }
@@ -32,17 +29,25 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
+fun HeroesApp(modifier: Modifier = Modifier) {
+        HeroesScreen()
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HeroesAppBar(modifier: Modifier = Modifier) {
+    CenterAlignedTopAppBar(
+        title = { Text(stringResource(R.string.app_name), style = MaterialTheme.typography.displayLarge) },
+        // colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.primaryContainer)
     )
 }
+
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     SuperheroesTheme {
-        Greeting("Android")
+        HeroesApp()
     }
 }

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.codelabstutorials"
+    namespace = "com.example.u4_path1_unscramble"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.codelabstutorials"
+        applicationId = "com.example.u4_path1_unscramble"
         minSdk = 30
         targetSdk = 36
         versionCode = 1
@@ -46,8 +46,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.runtime)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

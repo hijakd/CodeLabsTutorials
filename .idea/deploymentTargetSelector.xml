@@ -66,6 +66,9 @@
       <SelectionState runConfigName="app.u4_path1_unscramble">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="app.u4_path1_practice">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

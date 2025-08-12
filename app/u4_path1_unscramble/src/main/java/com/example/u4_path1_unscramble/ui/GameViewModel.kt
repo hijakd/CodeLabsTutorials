@@ -13,13 +13,15 @@ class GameViewModel : ViewModel() {
 
     // Game UI state
     private val _uiState = MutableStateFlow(GameUiState())
-    private var usedWords: MutableSet<String> = mutableSetOf()
-    var userGuess by mutableStateOf("")
-        private set
-
     // Backing property to avoid state updates from other classes
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
+
     private lateinit var currentWord: String
+
+    private var usedWords: MutableSet<String> = mutableSetOf()
+
+    var userGuess by mutableStateOf("")
+        private set
 
 
     init {

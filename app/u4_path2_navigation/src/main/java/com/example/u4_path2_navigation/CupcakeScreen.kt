@@ -27,8 +27,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavHostController
+import com.example.u4_path2_navigation.ui.OrderViewModel
 
 /**
  * Composable that displays the topBar and displays back button if back navigation is possible.

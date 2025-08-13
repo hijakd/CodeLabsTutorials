@@ -39,6 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.u4_path2_navigation.R
 import com.example.u4_path2_navigation.data.DataSource
+import com.example.u4_path2_navigation.data.DataSource.quantityOptions
 import com.example.u4_path2_navigation.ui.theme.CodeLabsTutorialsTheme
 
 /**
@@ -49,6 +50,7 @@ import com.example.u4_path2_navigation.ui.theme.CodeLabsTutorialsTheme
 @Composable
 fun StartOrderScreen(
     quantityOptions: List<Pair<Int, Int>>,
+    onNextButtonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -83,7 +85,7 @@ fun StartOrderScreen(
             quantityOptions.forEach { item ->
                 SelectQuantityButton(
                     labelResourceId = item.first,
-                    onClick = {}
+                    onClick = {onNextButtonClicked(item.second)}
                 )
             }
         }
@@ -114,6 +116,7 @@ fun StartOrderPreview() {
     CodeLabsTutorialsTheme {
         StartOrderScreen(
             quantityOptions = DataSource.quantityOptions,
+            onNextButtonClicked = {},
             modifier = Modifier
                 .fillMaxSize()
                 .padding(dimensionResource(R.dimen.padding_medium))

@@ -10,11 +10,11 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
+import com.example.u4_path2_navigation.CupcakeApp
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import java.text.SimpleDateFormat
-// import java.util.Calendar
 import java.util.Locale
 
 
@@ -30,7 +30,7 @@ class CupcakeScreenNavigationTest {
             navController = TestNavHostController(LocalContext.current).apply {
                 navigatorProvider.addNavigator(ComposeNavigator())
             }
-            CupcakeApp()
+            CupcakeApp(navController = navController)
         }
     }
 
@@ -65,6 +65,7 @@ class CupcakeScreenNavigationTest {
     @Test
     fun cupcakeNavHost_clickNextOnPickupScreen_navigatesToSummaryScreen(){
         navigateToPickupScreen()
+        composeTestRule.onNodeWithText(getFormattedDate()).performClick()
         composeTestRule.onNodeWithStringId(R.string.next).performClick()
         navController.assertCurrentRouteName(CupcakeScreen.Summary.name)
     }
@@ -113,7 +114,9 @@ class CupcakeScreenNavigationTest {
     @Test
     fun cupcakeNavHost_clickCancelOnSummaryScreen_navigatesToStartScreen(){
         navigateToSummaryScreen()
-        performCancel()
+        composeTestRule.onNodeWithStringId(R.string.cancel).performClick()
+        navController.assertCurrentRouteName(CupcakeScreen.Start.name)
+        // performCancel()
     }
 
 
@@ -149,10 +152,10 @@ class CupcakeScreenNavigationTest {
     }
 
     /* helper function to generate a formatted date string */
-    private fun getFormattedDate(): String {
+    fun getFormattedDate(): String {
         val calendar = Calendar.getInstance()
         calendar.add(java.util.Calendar.DATE, 1)
-        val formatter = SimpleDateFormat("E MM d", Locale.getDefault())
+        val formatter = SimpleDateFormat("E MMM d", Locale.getDefault())
         return formatter.format(calendar.time)
     }
 

@@ -1,0 +1,53 @@
+package com.gdd.u4_path3_adaptive_layouts
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.tooling.preview.Preview
+import com.gdd.u4_path3_adaptive_layouts.ui.ReplyApp
+import com.gdd.u4_path3_adaptive_layouts.ui.theme.CodeLabsTutorialsTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            CodeLabsTutorialsTheme {
+                val layoutDirection = LocalLayoutDirection.current
+                Surface(
+                    modifier = Modifier.padding(
+                        start = WindowInsets.safeDrawing.asPaddingValues().calculateStartPadding(layoutDirection),
+                        end = WindowInsets.safeDrawing.asPaddingValues().calculateEndPadding(layoutDirection)
+                    )
+                ) {
+                    ReplyApp()
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    CodeLabsTutorialsTheme {
+        Surface {
+            ReplyApp()
+        }
+    }
+}

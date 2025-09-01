@@ -76,7 +76,7 @@ fun LunchTrayApp(
             val uiState by viewModel.uiState.collectAsState()
             NavHost(
                 navController = navController,
-                startDestination = LunchTrayScreen.Start.name,modifier = Modifier.padding(innerPadding)
+                startDestination = LunchTrayScreen.Start.name, modifier = Modifier.padding(innerPadding)
             ){
                 composable(route = LunchTrayScreen.Start.name) {
                     StartOrderScreen(

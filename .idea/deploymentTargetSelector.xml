@@ -72,15 +72,6 @@
       <SelectionState runConfigName="app.u4_path2_navigation">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="cupcakeNavHost_verifyStartDestination()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="CupcakeScreenNavigationTest">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="cupcakeNavHost_clickNextOnPickupScreen_navigatesToSummaryScreen()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="CupcakeOrderScreenTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
@@ -89,7 +80,7 @@
       </SelectionState>
       <SelectionState runConfigName="app.u4_path3_adaptive_layouts">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-09-02T02:26:15.038762600Z">
+        <DropdownSelection timestamp="2025-09-02T05:27:24.939920100Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\hijakd\.android\avd\Resizable_API_36.avd" />
@@ -108,6 +99,15 @@
           </Target>
         </DropdownSelection>
         <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="ReplyAppTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="expandedDevice_selectedEmailEmailRetained_afterConfigChange()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="Compact tests">
+        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>

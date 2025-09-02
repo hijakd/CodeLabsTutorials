@@ -41,10 +41,30 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun ReplyAppPreview() {
     CodeLabsTutorialsTheme {
         Surface {
             ReplyApp(windowSize = WindowWidthSizeClass.Compact)
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 700)
+@Composable
+fun ReplyAppMediumPreview() {
+    CodeLabsTutorialsTheme {
+        Surface {
+            ReplyApp(windowSize = WindowWidthSizeClass.Medium)
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 1000)
+@Composable
+fun ReplyAppExpandedPreview() {
+    CodeLabsTutorialsTheme {
+        Surface {
+            ReplyApp(windowSize = WindowWidthSizeClass.Expanded)
         }
     }
 }

@@ -26,7 +26,7 @@ data class Email(
     /** Sender of the email **/
     val sender: Account,
     /** Recipient(s) of the email **/
-    val recipient: List<Account> = emptyList(),
+    val recipients: List<Account> = emptyList(),
     /** Recipient(s) of the email **/
     @StringRes val subject: Int = -1,
     /** Content of the email **/

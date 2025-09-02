@@ -78,9 +78,6 @@
       <SelectionState runConfigName="CupcakeScreenNavigationTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="cupcakeNavHost_clickOneCupcake_navigatesToSelectFlavourScreen()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="cupcakeNavHost_clickNextOnPickupScreen_navigatesToSummaryScreen()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
@@ -89,6 +86,28 @@
       </SelectionState>
       <SelectionState runConfigName="app.u4_path2_nav_practice_lunch_tray">
         <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="app.u4_path3_adaptive_layouts">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-09-02T02:26:15.038762600Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\hijakd\.android\avd\Resizable_API_36.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="MainActivity">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-09-02T03:50:27.033031200Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\hijakd\.android\avd\Resizable_API_36.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
     </selectionStates>
   </component>

@@ -15,11 +15,20 @@
  */
 package com.gdd.u4_path3_adaptive_layouts.ui
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -77,7 +86,6 @@ fun ReplyListOnlyContent(
     }
 }
 
-@SuppressLint("ContextCastToActivity")
 @Composable
 fun ReplyListAndDetailContent(
     replyUiState: ReplyUiState,
@@ -171,7 +179,8 @@ private fun ReplyEmailItemHeader(email: Email, modifier: Modifier = Modifier) {
     Row(modifier = modifier) {
         ReplyProfileImage(
             drawableResource = email.sender.avatar,
-            description = stringResource(email.sender.firstName) + " " + stringResource(email.sender.lastName),
+            description = stringResource(email.sender.firstName) + " "
+                    + stringResource(email.sender.lastName),
             modifier = Modifier.size(dimensionResource(R.dimen.email_header_profile_size))
         )
         Column(
@@ -183,27 +192,39 @@ private fun ReplyEmailItemHeader(email: Email, modifier: Modifier = Modifier) {
                 ),
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = stringResource(email.sender.firstName), style = MaterialTheme.typography.labelMedium)
-            Text(text = stringResource(email.createdAt), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.outline)
+            Text(
+                text = stringResource(email.sender.firstName),
+                style = MaterialTheme.typography.labelMedium
+            )
+            Text(
+                text = stringResource(email.createdAt),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.outline
+            )
         }
     }
 }
 
 @Composable
-fun ReplyProfileImage(@DrawableRes drawableResource: Int, description: String, modifier: Modifier = Modifier) {
+fun ReplyProfileImage(
+    @DrawableRes drawableResource: Int,
+    description: String,
+    modifier: Modifier = Modifier,
+) {
     Box(modifier = modifier) {
         Image(
+            modifier = Modifier.clip(CircleShape),
             painter = painterResource(drawableResource),
             contentDescription = description,
-            modifier = Modifier.clip(
-                CircleShape
-            )
         )
     }
 }
 
 @Composable
-fun ReplyLogo(modifier: Modifier = Modifier, color: Color = MaterialTheme.colorScheme.primary) {
+fun ReplyLogo(
+    modifier: Modifier = Modifier,
+    color: Color = MaterialTheme.colorScheme.primary
+) {
     Image(
         painter = painterResource(R.drawable.logo),
         contentDescription = stringResource(R.string.logo),
@@ -214,7 +235,11 @@ fun ReplyLogo(modifier: Modifier = Modifier, color: Color = MaterialTheme.colorS
 
 @Composable
 private fun ReplyHomeTopBar(modifier: Modifier = Modifier) {
-    Row(horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically, modifier = modifier) {
+    Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+    ) {
         ReplyLogo(
             modifier = Modifier
                 .size(dimensionResource(R.dimen.topbar_logo_size))

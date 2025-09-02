@@ -33,13 +33,14 @@ class ReplyViewModel : ViewModel() {
     }
 
     private fun initializeUIState() {
-        var mailboxes: Map<MailboxType, List<Email>> =
+        val mailboxes: Map<MailboxType, List<Email>> =
             LocalEmailsDataProvider.allEmails.groupBy { it.mailbox }
-        _uiState.value = ReplyUiState(
-            mailboxes = mailboxes,
-            currentSelectedEmail = mailboxes[MailboxType.Inbox]?.get(0)
-                ?: LocalEmailsDataProvider.defaultEmail
-        )
+        _uiState.value =
+            ReplyUiState(
+                mailboxes = mailboxes,
+                currentSelectedEmail = mailboxes[MailboxType.Inbox]?.get(0)
+                    ?: LocalEmailsDataProvider.defaultEmail
+            )
     }
 
     fun updateDetailsScreenStates(email: Email) {

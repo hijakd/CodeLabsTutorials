@@ -7,6 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -15,6 +18,7 @@ import com.gdd.u4_path3_adaptive_layouts.ui.ReplyApp
 import com.gdd.u4_path3_adaptive_layouts.ui.theme.CodeLabsTutorialsTheme
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,7 +31,8 @@ class MainActivity : ComponentActivity() {
                         end = WindowInsets.safeDrawing.asPaddingValues().calculateEndPadding(layoutDirection)
                     )
                 ) {
-                    ReplyApp()
+                    val windowSize = calculateWindowSizeClass(this)
+                    ReplyApp(windowSize = windowSize.widthSizeClass)
                 }
             }
         }
@@ -39,7 +44,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingPreview() {
     CodeLabsTutorialsTheme {
         Surface {
-            ReplyApp()
+            ReplyApp(windowSize = WindowWidthSizeClass.Compact)
         }
     }
 }

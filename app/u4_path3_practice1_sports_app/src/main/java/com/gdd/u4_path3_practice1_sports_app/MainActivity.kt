@@ -20,6 +20,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Surface
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.gdd.u4_path3_practice1_sports_app.ui.SportsApp
 import com.gdd.u4_path3_practice1_sports_app.ui.theme.CodeLabsTutorialsTheme
 
@@ -27,15 +32,27 @@ import com.gdd.u4_path3_practice1_sports_app.ui.theme.CodeLabsTutorialsTheme
  * Activity for Sports app
  */
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
             CodeLabsTutorialsTheme {
                 Surface {
-                    SportsApp()
+                    val windowSize = calculateWindowSizeClass(this)
+                    SportsApp(windowSize = windowSize.widthSizeClass)
                 }
             }
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 1000)
+@Composable
+private fun SportsAppPreview() {
+    CodeLabsTutorialsTheme {
+        Surface {
+            SportsApp(windowSize = WindowWidthSizeClass.Expanded)
         }
     }
 }
